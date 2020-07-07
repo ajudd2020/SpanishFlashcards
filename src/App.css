@@ -1,38 +1,68 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #9792E3;
+}
+
+
 .App {
   text-align: center;
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.searchBox {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.searchItems {
+  border: 2px black solid;
+  width: 300px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 15px;
+  background-color: #EDFFEC;
 }
 
-.App-link {
-  color: #61dafb;
+.searchDisplay {
+  margin-top: 20px;
+  padding: 0px 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.English {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.POS {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.answer {
+  font-size: 18px;
+}
+
+form input {
+  border: none;
+  width: 150px;
+  height: 30px;
+}
+
+button {
+  background-color: #61E786;
+  cursor: pointer;
+  height: 30px;
+  border: none;
+}
+
+@media screen and (min-width: 330px) {
+  form input {
+    width: 250px;
   }
 }
