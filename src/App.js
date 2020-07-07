@@ -1,26 +1,135 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CardList from './components/CardList/CardList'
+import Footer from './components/Footer/Footer'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      displayInstructions: true,
+      displayClear: false,
+      searchValue: '',
+      wordList: [],
+      searchList: '',
+      cardData: []
+    };
+
+    this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+    this.makeAPICall = this.makeAPICall.bind(this);
+    this.displaySearch = this.displaySearch.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.clearResult = this.clearResults.bind(this);
+  }
+  
+
+  handleOnChange (event){
+    this.setState({searchValue: event.target.value})
+  };
+
+  handleSearch (event) {
+    var encoded = encodeURIComponent(this.state.searchValue)
+    this.setState({searchValue: encoded})
+    var letters = /^[A-za-z\s]*$/;
+    event.preventDefault();
+    if (this.state.searchValue === ""){
+      alert ("Please enter a valid search")
+    } else if (this.state.searchValue.match(letters)) {
+      this.makeAPICall(this.state.searchValue);
+    } else {
+      this.setState({searchValue: ""})
+      alert ("Please enter only letters")
+    }
+  };
+
+  makeAPICall (searchInput) {
+    console.log(searchInput)
+    var url = `https://www.dictionaryapi.com/api/v3/references/spanish/json/${searchInput}?key=fa92e333-2908-43c0-948e-097fbca8468b`
+    console.log(url);
+    const wordArray = [];
+    fetch (url)
+      .then (response => {
+        return response.json();
+      })
+      .then (words => {
+        for (const word of words) {
+          for (let i=0; i<word.shortdef.length; i++){
+            let answer = word.shortdef[i];
+            let partOfSpeech = word.fl;
+            let englishDef = word.hwi.hw;
+            wordArray.push({answer: answer, POS: partOfSpeech, english: englishDef})
+          }
+        }
+        this.setState({wordList : wordArray})
+        this.displaySearch(this.state.wordList);
+        this.setState({searchValue: ""})
+      })
+      .catch(() => {
+        this.setState({searchValue:""})
+        alert("Oops! The dictionary cannot find that combination of words. Please try again with something else.")
+      });
+  }
+
+  displaySearch (listInfo) {
+    var display = listInfo
+    var displayArray = []
+    for (let i=0; i<display.length; i++) {
+      let key = i
+      let displayAnswer = display[i].answer.split(":").pop();
+      let displayPOS = display[i].POS
+      let displayEnglish = display[i].english
+      displayArray.push(<div className="searchItems" key={key} onClick = {(e) => this.handleClick(e, displayAnswer, displayEnglish)}>
+          <div className = "English">{displayEnglish}</div>
+          <div className="POS">Part of Speech: {displayPOS}</div>
+          <div className="answer">{displayAnswer}</div>
+        </div>)
+    }
+    this.setState({displayInstructions: false})
+    this.setState({searchList:displayArray})
+  }
+
+handleClick(e, Spanish, English) {
+  e.preventDefault();
+  var newCardData = []
+  newCardData.push(English, Spanish)
+  this.setState({cardData:[...this.state.cardData, newCardData]})
+  this.setState({searchList: ""})
+  this.setState({displayClear: true})
+}
+
+clearResults (event) {
+  event.preventDefault();
+  this.setState({cardData: [] })
+  this.setState({displayClear: false})
+  this.setState({displayInstructions: true})
+}
+
+
+  render() {
+    return (
+      <div className="App">
+          <h1>Spanish Flashcard Generator</h1>
+          <form>
+              <input name="test" type="text" placeholder="Enter a word"
+              onChange = {event => this.handleOnChange(event)}
+              value = {this.state.searchValue} />
+              <button onClick= {this.handleSearch}>Search</button>
+          </form>
+          <div className="searchDisplay">
+              {this.state.displayInstructions?
+              "This site searchs the Webster's Dictionary API to provide you with the most accurate definition avaliable. Please enter the word you want to search for. Then, click on the definition that you want added to your flashcards": 
+              <div className="searchBox">
+                  {this.state.searchList}
+              </div>}
+          </div>
+          <CardList cardData= {this.state.cardData}/>
+          {this.state.displayClear? <button onClick = {event =>this.clearResults(event)}>Clear Cards</button>: ""}
+          <Footer/>
+      </div>
+    );
+  }
+  
 }
 
 export default App;
