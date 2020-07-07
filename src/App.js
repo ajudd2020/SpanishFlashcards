@@ -14,7 +14,9 @@ class App extends React.Component {
       searchList: '',
       cardData: [],
       error: false,
-      errorMessage: ""
+      errorMessage: "",
+      frontValue: '',
+      backValue: ''
     };
 
     this.handleOnChange = this.handleOnChange.bind(this);
@@ -23,6 +25,9 @@ class App extends React.Component {
     this.displaySearch = this.displaySearch.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.clearResult = this.clearResults.bind(this);
+    this.createFrontOnChange = this.createFrontOnChange.bind(this);
+    this.createBackOnChange= this.createBackOnChange.bind(this);
+    this.handleCreateCard = this.handleCreateCard.bind(this);
   }
   
 
@@ -115,20 +120,64 @@ clearResults (event) {
   this.setState({displayInstructions: true})
 }
 
+createFrontOnChange (event) {
+  this.setState({frontValue: encodeURIComponent(event.target.value.trim())})
+  this.setState({error: false})
+}
+
+createBackOnChange (event) {
+  this.setState({backValue: encodeURIComponent(event.target.value.trim())})
+  this.setState({error: false})
+}
+
+handleCreateCard (event) {
+  event.preventDefault();
+  var createCardData = [];
+  if (this.state.frontValue === "" || this.state.backValue === "") {
+    alert("Please enter a word and definition!")
+  } else {
+    createCardData.push(this.state.frontValue, this.state.backValue);
+    this.setState({cardData:[...this.state.cardData, createCardData]});
+    this.setState({displayClear: true});
+    this.setState({displayInstructions: false});
+    this.setState({frontValue: ""});
+    this.setState({backValue: ""});
+  }
+}
+
 
   render() {
     return (
       <div className="App">
           <h1>Spanish Flashcard Generator</h1>
-          <form>
-              <input name="test" type="text" placeholder="Enter a word"
-              onChange = {event => this.handleOnChange(event)}
-              value = {this.state.searchValue} />
-              <button onClick= {this.handleSearch}>Search</button>
-          </form>
+          <div className="forms">
+              <div>
+                <form className="SearchForm">
+                      <input name="APISearch" type="text" placeholder="Enter a word"
+                      onChange = {event => this.handleOnChange(event)}
+                      value = {this.state.searchValue} />
+                      <button onClick= {this.handleSearch}>Search</button>
+                </form>
+              </div>
+              <div>
+                <form className="CreateForm">
+                  <label for="CreateCardFront">Word for front of card:</label>
+                  <input name="CreateCardFront" id ="CreateCardFront" type="text" 
+                  placeholder="Enter your word"
+                  onChange = {event => this.createFrontOnChange(event)}
+                  value = {this.state.frontValue} />
+                  <label for="CreateCardBack">Word for back of card:</label>
+                  <input name="CreateCardBack" id="CreateCardBack" type="text" 
+                  placeholder="Enter your definition"
+                  onChange = {event => this.createBackOnChange(event)}
+                  value = {this.state.backValue} />
+                  <button onClick = {this.handleCreateCard}>Create Card!</button>
+                </form>
+              </div>
+          </div>
           <div className="searchDisplay">
               {this.state.displayInstructions?
-              <div className="instructions"><div>This site searchs the Webster's Dictionary API to provide you with the most accurate definition avaliable.</div> <div>Please enter the word you want to search for. Then, click on the definition that you want added to your flashcards</div></div>: 
+              <div className="instructions"><div>This site searchs the Webster's Dictionary API to provide you with the most accurate definition avaliable.</div> <div>Please enter the word you want to search for. Then, click on the definition that you want added to your flashcards</div><div>You can search in English or in Spanish.</div></div>: 
               <div className="searchBox">
                   {this.state.searchList}
               </div>}
