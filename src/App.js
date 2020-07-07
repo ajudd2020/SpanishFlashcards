@@ -25,12 +25,12 @@ class App extends React.Component {
   
 
   handleOnChange (event){
-    this.setState({searchValue: event.target.value})
+    this.setState({searchValue: event.target.value.trim()})
   };
 
   handleSearch (event) {
-    var encoded = encodeURIComponent(this.state.searchValue)
-    this.setState({searchValue: encoded})
+    this.setState({searchValue: event.target.value.trim()})
+    console.log("encoded",this.state.searchValue)
     var letters = /^[A-za-z\s]*$/;
     event.preventDefault();
     if (this.state.searchValue === ""){
@@ -44,15 +44,20 @@ class App extends React.Component {
   };
 
   makeAPICall (searchInput) {
-    console.log(searchInput)
     var url = `https://www.dictionaryapi.com/api/v3/references/spanish/json/${searchInput}?key=fa92e333-2908-43c0-948e-097fbca8468b`
     console.log(url);
     const wordArray = [];
     fetch (url)
       .then (response => {
+        console.log(response)
         return response.json();
       })
       .then (words => {
+        console.log(words)
+        if (words.length === 0) {
+          alert("Invalid Search. Please Try again")
+        }
+        console.log("words", words)
         for (const word of words) {
           for (let i=0; i<word.shortdef.length; i++){
             let answer = word.shortdef[i];
@@ -65,9 +70,10 @@ class App extends React.Component {
         this.displaySearch(this.state.wordList);
         this.setState({searchValue: ""})
       })
-      .catch(() => {
+      .catch((error) => {
+        console.log(error)
         this.setState({searchValue:""})
-        alert("Oops! The dictionary cannot find that combination of words. Please try again with something else.")
+        alert("Oops! Something went wrong. Please try again with something else.")
       });
   }
 
@@ -118,7 +124,7 @@ clearResults (event) {
           </form>
           <div className="searchDisplay">
               {this.state.displayInstructions?
-              <div className="instructions">This site searchs the Webster's Dictionary API to provide you with the most accurate definition avaliable. Please enter the word you want to search for. Then, click on the definition that you want added to your flashcards</div>: 
+              <div className="instructions"><div>This site searchs the Webster's Dictionary API to provide you with the most accurate definition avaliable.</div> <div>Please enter the word you want to search for. Then, click on the definition that you want added to your flashcards</div></div>: 
               <div className="searchBox">
                   {this.state.searchList}
               </div>}
