@@ -71,6 +71,11 @@ button {
   font-weight: bold;
 }
 
+.error {
+  color: #61E786;
+  text-shadow: 2px 2px black;
+}
+
 @media screen and (min-width: 330px) {
   form input {
     width: 250px;

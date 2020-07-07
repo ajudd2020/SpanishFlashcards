@@ -12,7 +12,9 @@ class App extends React.Component {
       searchValue: '',
       wordList: [],
       searchList: '',
-      cardData: []
+      cardData: [],
+      error: false,
+      errorMessage: ""
     };
 
     this.handleOnChange = this.handleOnChange.bind(this);
@@ -26,6 +28,7 @@ class App extends React.Component {
 
   handleOnChange (event){
     this.setState({searchValue: event.target.value.trim()})
+    this.setState({error: false})
   };
 
   handleSearch (event) {
@@ -71,9 +74,10 @@ class App extends React.Component {
         this.setState({searchValue: ""})
       })
       .catch((error) => {
-        console.log(error)
+        let errorTest = String(error)
+        this.setState({error: true})
+        this.setState({errorMessage: errorTest})
         this.setState({searchValue:""})
-        alert("Oops! Something went wrong. Please try again with something else.")
       });
   }
 
@@ -129,6 +133,7 @@ clearResults (event) {
                   {this.state.searchList}
               </div>}
           </div>
+          {this.state.error? <h2 className="error">{this.state.errorMessage}. Please try your search again.</h2>: ""}
           <CardList cardData= {this.state.cardData}/>
           {this.state.displayClear? <button onClick = {event =>this.clearResults(event)}>Clear Cards</button>: ""}
           <Footer/>
