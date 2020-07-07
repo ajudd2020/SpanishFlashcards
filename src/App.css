@@ -3,13 +3,16 @@
 }
 
 body {
-  background-color: #9792E3;
+  background-color: #938DE2;
 }
 
 
 .App {
   text-align: center;
   padding: 10px;
+}
+h1 {
+  text-shadow: 1px 1px #61E786;
 }
 
 .searchBox {
@@ -53,12 +56,19 @@ form input {
   width: 150px;
   height: 30px;
 }
+input:focus, button:focus {
+  outline: none;
+}
 
 button {
   background-color: #61E786;
   cursor: pointer;
   height: 30px;
   border: none;
+}
+
+.instructions {
+  font-weight: bold;
 }
 
 @media screen and (min-width: 330px) {

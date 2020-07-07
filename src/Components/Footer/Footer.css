@@ -7,8 +7,11 @@
     bottom: 0;
     height: 50px;
     width: 100%;
+    font-weight: bolder;
+    text-shadow: 1px 1px black;
 }
 
 a {
-    color: white;
+    color: #61E786;
+    text-decoration: none;
 }

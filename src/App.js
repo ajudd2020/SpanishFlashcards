@@ -118,7 +118,7 @@ clearResults (event) {
           </form>
           <div className="searchDisplay">
               {this.state.displayInstructions?
-              "This site searchs the Webster's Dictionary API to provide you with the most accurate definition avaliable. Please enter the word you want to search for. Then, click on the definition that you want added to your flashcards": 
+              <div className="instructions">This site searchs the Webster's Dictionary API to provide you with the most accurate definition avaliable. Please enter the word you want to search for. Then, click on the definition that you want added to your flashcards</div>: 
               <div className="searchBox">
                   {this.state.searchList}
               </div>}
