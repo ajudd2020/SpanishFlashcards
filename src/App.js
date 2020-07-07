@@ -152,6 +152,7 @@ handleCreateCard (event) {
           <h1>Spanish Flashcard Generator</h1>
           <div className="forms">
               <div>
+                <div className="FormHeading">Generate a Card</div>
                 <form className="SearchForm">
                       <input name="APISearch" type="text" placeholder="Enter a word"
                       onChange = {event => this.handleOnChange(event)}
@@ -160,6 +161,7 @@ handleCreateCard (event) {
                 </form>
               </div>
               <div>
+                <div className ="FormHeading">Create a Card</div>
                 <form className="CreateForm">
                   <label for="CreateCardFront">Word for front of card:</label>
                   <input name="CreateCardFront" id ="CreateCardFront" type="text" 

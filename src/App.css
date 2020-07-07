@@ -53,7 +53,7 @@ h1 {
 
 form input {
   border: none;
-  width: 120px;
+  width: 150px;
   height: 30px;
 }
 input:focus, button:focus {
@@ -85,14 +85,16 @@ button {
 
 .forms > div {
   border: 2px black solid;
-  width: 50%;
-  height: 160px;
+  width: 80%;
+  height: 220px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
-.CreateForm {
+.CreateForm, .SearchForm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,7 +102,7 @@ button {
   padding-bottom: 10px;
 }
 
-.CreateForm button {
+.CreateForm button, .SearchForm button {
   margin-top: 5px;
 }
 
@@ -112,16 +114,51 @@ label {
   padding: 5px;
 }
 
-@media screen and (min-width: 570px) {
+.FormHeading {
+  font-weight: bold;
+  font-size: 22px;
+}
 
-  .forms {
-    flex-direction: row;
-  }
+@media screen and (min-width: 300px) {
+
   form input {
-    width: 250px;
+    width: 200px;
   }
   
   .forms > div {
-    height: 200px;
+    font-size: 14px;
+  }
+
+  .SearchForm {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 560px) {
+
+  .forms {
+    flex-direction: row;
+    font-size: 18px;
+  }
+  form input {
+    width: 200px;
+  }
+  
+  .forms > div {
+    height: 250px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+
+  form input {
+    width: 250px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+
+  form input {
+    width: 400px;
   }
 }
