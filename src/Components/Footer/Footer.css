@@ -1,0 +1,14 @@
+.footerStyle {
+    color: #61E786;
+    padding: 15px;
+    position: fixed;
+    text-align: left;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+}
+
+a {
+    color: white;
+}
