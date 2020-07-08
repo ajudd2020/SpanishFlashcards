@@ -32,22 +32,25 @@ class App extends React.Component {
   
 
   handleOnChange (event){
-    this.setState({searchValue: event.target.value.trim()})
+    this.setState({searchValue: event.target.value})
     this.setState({error: false})
   };
 
   handleSearch (event) {
-    this.setState({searchValue: event.target.value.trim()})
-    console.log("encoded",this.state.searchValue)
-    var letters = /^[A-za-z\s]*$/;
-    event.preventDefault();
-    if (this.state.searchValue === ""){
-      alert ("Please enter a valid search")
-    } else if (this.state.searchValue.match(letters)) {
-      this.makeAPICall(this.state.searchValue);
-    } else {
+    if (this.state.searchValue.trim() ==="") {
+      alert("Please enter a word to search for");
       this.setState({searchValue: ""})
-      alert ("Please enter only letters")
+    } else {
+      var letters = /^[A-za-z\s]*$/;
+      event.preventDefault();
+      if (this.state.searchValue === ""){
+        alert ("Please enter a valid search")
+      } else if (this.state.searchValue.match(letters)) {
+        this.makeAPICall(this.state.searchValue);
+      } else {
+        this.setState({searchValue: ""})
+        alert ("Please enter only letters")
+      }
     }
   };
 
@@ -121,27 +124,36 @@ clearResults (event) {
 }
 
 createFrontOnChange (event) {
-  this.setState({frontValue: encodeURIComponent(event.target.value.trim())})
+  this.setState({frontValue: event.target.value})
   this.setState({error: false})
 }
 
 createBackOnChange (event) {
-  this.setState({backValue: encodeURIComponent(event.target.value.trim())})
+  this.setState({backValue: event.target.value})
   this.setState({error: false})
 }
 
 handleCreateCard (event) {
   event.preventDefault();
   var createCardData = [];
-  if (this.state.frontValue === "" || this.state.backValue === "") {
-    alert("Please enter a word and definition!")
-  } else {
-    createCardData.push(this.state.frontValue, this.state.backValue);
-    this.setState({cardData:[...this.state.cardData, createCardData]});
-    this.setState({displayClear: true});
-    this.setState({displayInstructions: false});
+  if (this.state.frontValue.trim() === "" || this.state.backValue.trim() === "") {
+    alert("Please enter a word and definition.")
     this.setState({frontValue: ""});
     this.setState({backValue: ""});
+  } else {
+    var lettersNumbers = /^[A-za-z\s0-9]*$/;
+    if (this.state.frontValue.match(lettersNumbers) && this.state.backValue.match(lettersNumbers)) {
+      createCardData.push((this.state.frontValue), (this.state.backValue));
+      this.setState({cardData:[...this.state.cardData, createCardData]});
+      this.setState({displayClear: true});
+      this.setState({displayInstructions: false});
+      this.setState({frontValue: ""});
+      this.setState({backValue: ""});
+    } else {
+      alert("Only letters and numbers are valid characters. Please try again.");
+      this.setState({frontValue: ""});
+      this.setState({backValue: ""});
+    }
   }
 }
 
@@ -154,32 +166,32 @@ handleCreateCard (event) {
               <div>
                 <div className="FormHeading">Generate a Card</div>
                 <form className="SearchForm">
-                      <input name="APISearch" type="text" placeholder="Enter a word"
-                      onChange = {event => this.handleOnChange(event)}
-                      value = {this.state.searchValue} />
-                      <button onClick= {this.handleSearch}>Search</button>
+                    <input name="APISearch" type="text" placeholder="Enter a word"
+                    onChange = {event => this.handleOnChange(event)}
+                    value = {this.state.searchValue} />
+                    <button onClick= {this.handleSearch}>Search</button>
                 </form>
               </div>
               <div>
                 <div className ="FormHeading">Create a Card</div>
                 <form className="CreateForm">
-                  <label for="CreateCardFront">Word for front of card:</label>
-                  <input name="CreateCardFront" id ="CreateCardFront" type="text" 
-                  placeholder="Enter your word"
-                  onChange = {event => this.createFrontOnChange(event)}
-                  value = {this.state.frontValue} />
-                  <label for="CreateCardBack">Word for back of card:</label>
-                  <input name="CreateCardBack" id="CreateCardBack" type="text" 
-                  placeholder="Enter your definition"
-                  onChange = {event => this.createBackOnChange(event)}
-                  value = {this.state.backValue} />
-                  <button onClick = {this.handleCreateCard}>Create Card!</button>
+                    <label htmlFor="CreateCardFront">Word for front of card:</label>
+                    <input name="CreateCardFront" id ="CreateCardFront" type="text" 
+                    placeholder="Enter your word"
+                    onChange = {event => this.createFrontOnChange(event)}
+                    value = {this.state.frontValue} />
+                    <label htmlFor="CreateCardBack">Word for back of card:</label>
+                    <input name="CreateCardBack" id="CreateCardBack" type="text" 
+                    placeholder="Enter your definition"
+                    onChange = {event => this.createBackOnChange(event)}
+                    value = {this.state.backValue} />
+                    <button onClick = {this.handleCreateCard}>Create Card!</button>
                 </form>
               </div>
           </div>
           <div className="searchDisplay">
               {this.state.displayInstructions?
-              <div className="instructions"><div>This site searchs the Webster's Dictionary API to provide you with the most accurate definition avaliable.</div> <div>Please enter the word you want to search for. Then, click on the definition that you want added to your flashcards</div><div>You can search in English or in Spanish.</div></div>: 
+              <div className="instructions"><div>This site searches the Webster's Dictionary API to provide you with the most accurate definition avaliable.</div> <div>Please enter the word you want to search for. Then, click on the definition that you want added to your flashcards</div><div>You can search in English or in Spanish.</div></div>: 
               <div className="searchBox">
                   {this.state.searchList}
               </div>}
