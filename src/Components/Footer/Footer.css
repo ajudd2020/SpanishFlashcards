@@ -1,5 +1,4 @@
 .footerStyle {
-    color: #61E786;
     padding: 15px;
     position: fixed;
     text-align: left;
@@ -8,10 +7,10 @@
     height: 50px;
     width: 100%;
     font-weight: bolder;
-    text-shadow: 1px 1px black;
+    text-shadow: 1px 1px #61E786;
 }
 
 a {
-    color: #61E786;
+    color: black;
     text-decoration: none;
 }

@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #938DE2;
+  background-color: #8a83e9;
 }
 
 
@@ -12,7 +12,7 @@ body {
   padding: 10px;
 }
 h1 {
-  text-shadow: 1px 1px #61E786;
+  text-shadow: .5px .5px #61E786;
 }
 
 .searchBox {

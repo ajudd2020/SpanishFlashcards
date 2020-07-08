@@ -2,7 +2,7 @@
 
 This app was created using React.js, create-react-app, as well as the Webster Dictionary Spanish-English API. With this app, the user can create flashcards to use when studying Spanish/English vocabulary. 
 
-### Future Functionality to implement: 
+### Future Functionality to Implement: 
 * Edit cards after creation
 * Delete individual cards
 
