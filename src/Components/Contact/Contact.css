@@ -1,0 +1,40 @@
+* {
+    text-align: center;
+}
+
+.ContactInput {
+    margin-left: 5px;
+    width: 200px;
+}
+
+.ContactForm {
+    display: flex;
+    flex-direction: column;
+}
+.TextArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea {
+    text-align: left;
+    width: 50%
+}
+
+.ContactSubmit {
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 500px) {
+    textarea {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    textarea {
+        width: 50%;
+    }
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import CardList from '../CardList/CardList'
 import Footer from '../Footer/Footer'
+import Instructions from '../Instructions/Instructions'
 
 class App extends React.Component {
   constructor (props) {
@@ -94,10 +95,10 @@ class App extends React.Component {
     var displayArray = []
     for (let i=0; i<display.length; i++) {
       let key = i
-      let displayAnswer = display[i].answer.split(":").pop();
+      let displayAnswer = display[i].answer;
       let displayPOS = display[i].POS
       let displayEnglish = display[i].english
-      displayArray.push(<div className="searchItems" key={key} onClick = {(e) => this.handleClick(e, displayAnswer, displayEnglish)}>
+      displayArray.push(<div className="searchItems" key={key} onClick = {(e) => this.handleClick(e, displayAnswer.split(":").pop(), displayEnglish)}>
           <div className = "English">{displayEnglish}</div>
           <div className="POS">Part of Speech: {displayPOS}</div>
           <div className="answer">{displayAnswer}</div>
@@ -105,57 +106,57 @@ class App extends React.Component {
     }
     this.setState({displayInstructions: false})
     this.setState({searchList:displayArray})
-  }
+  };
 
-handleClick(e, Spanish, English) {
-  e.preventDefault();
-  var newCardData = []
-  newCardData.push(English, Spanish)
-  this.setState({cardData:[...this.state.cardData, newCardData]})
-  this.setState({searchList: ""})
-  this.setState({displayClear: true})
-}
+  handleClick(e, Spanish, English) {
+    e.preventDefault();
+    var newCardData = []
+    newCardData.push(English, Spanish)
+    this.setState({cardData:[...this.state.cardData, newCardData]})
+    this.setState({searchList: ""})
+    this.setState({displayClear: true})
+  };
 
-clearResults (event) {
-  event.preventDefault();
-  this.setState({cardData: [] })
-  this.setState({displayClear: false})
-  this.setState({displayInstructions: true})
-}
+  clearResults (event) {
+    event.preventDefault();
+    this.setState({cardData: [] })
+    this.setState({displayClear: false})
+    this.setState({displayInstructions: true})
+  };
 
-createFrontOnChange (event) {
-  this.setState({frontValue: event.target.value})
-  this.setState({error: false})
-}
+  createFrontOnChange (event) {
+    this.setState({frontValue: event.target.value})
+    this.setState({error: false})
+  };
 
-createBackOnChange (event) {
-  this.setState({backValue: event.target.value})
-  this.setState({error: false})
-}
+  createBackOnChange (event) {
+    this.setState({backValue: event.target.value})
+    this.setState({error: false})
+  };
 
-handleCreateCard (event) {
-  event.preventDefault();
-  var createCardData = [];
-  if (this.state.frontValue.trim() === "" || this.state.backValue.trim() === "") {
-    alert("Please enter a word and definition.")
-    this.setState({frontValue: ""});
-    this.setState({backValue: ""});
-  } else {
-    var lettersNumbers = /^[A-za-z\s0-9]*$/;
-    if (this.state.frontValue.match(lettersNumbers) && this.state.backValue.match(lettersNumbers)) {
-      createCardData.push((this.state.frontValue), (this.state.backValue));
-      this.setState({cardData:[...this.state.cardData, createCardData]});
-      this.setState({displayClear: true});
-      this.setState({displayInstructions: false});
+  handleCreateCard (event) {
+    event.preventDefault();
+    var createCardData = [];
+    if (this.state.frontValue.trim() === "" || this.state.backValue.trim() === "") {
+      alert("Please enter a word and definition.")
       this.setState({frontValue: ""});
       this.setState({backValue: ""});
     } else {
-      alert("Only letters and numbers are valid characters. Please try again.");
-      this.setState({frontValue: ""});
-      this.setState({backValue: ""});
-    }
-  }
-}
+      var lettersNumbers = /^[A-za-z\s0-9]*$/;
+      if (this.state.frontValue.match(lettersNumbers) && this.state.backValue.match(lettersNumbers)) {
+        createCardData.push((this.state.frontValue), (this.state.backValue));
+        this.setState({cardData:[...this.state.cardData, createCardData]});
+        this.setState({displayClear: true});
+        this.setState({displayInstructions: false});
+        this.setState({frontValue: ""});
+        this.setState({backValue: ""});
+      } else {
+        alert("Only letters and numbers are valid characters. Please try again.");
+        this.setState({frontValue: ""});
+        this.setState({backValue: ""});
+      }
+    };
+};
 
 
   render() {
@@ -166,7 +167,7 @@ handleCreateCard (event) {
               <div>
                 <div className="FormHeading">Generate a Card</div>
                 <form className="SearchForm">
-                    <input name="APISearch" type="text" placeholder="Enter a word"
+                    <input name="APISearch" type="text" placeholder="Search the dictionary"
                     onChange = {event => this.handleOnChange(event)}
                     value = {this.state.searchValue} />
                     <button onClick= {this.handleSearch}>Search</button>
@@ -191,7 +192,7 @@ handleCreateCard (event) {
           </div>
           <div className="searchDisplay">
               {this.state.displayInstructions?
-              <div className="instructions"><div>This site searches the Webster's Dictionary API to provide you with the most accurate definition avaliable.</div> <div>Please enter the word you want to search for. Then, click on the definition that you want added to your flashcards</div><div>You can search in English or in Spanish.</div></div>: 
+              <Instructions />: 
               <div className="searchBox">
                   {this.state.searchList}
               </div>}
