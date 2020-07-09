@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import CardList from './components/CardList/CardList'
-import Footer from './components/Footer/Footer'
+import CardList from '../CardList/CardList'
+import Footer from '../Footer/Footer'
 
 class App extends React.Component {
   constructor (props) {

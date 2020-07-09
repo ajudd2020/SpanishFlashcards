@@ -1,0 +1,8 @@
+.MenuButton {
+    border: 1px #EDFFEC solid;
+}
+nav {
+    background-color: #25283D;
+    padding: 5px;
+    text-align: end;
+}

@@ -5,6 +5,7 @@ This app was created using React.js, create-react-app, as well as the Webster Di
 ### Future Functionality to Implement: 
 * Edit cards after creation
 * Delete individual cards
+* Add page with verb conjugations
 
 ## User Stories
 
