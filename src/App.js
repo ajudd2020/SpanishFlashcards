@@ -1,11 +1,11 @@
 import React from 'react';
-import App from "./components/App/App";
+import Home from "./components/Home/Home";
 import Contact from './components/Contact/Contact'
 import Menu from './components/Menu/Menu'
 
-export default function HomePage() {
+export default function App() {
     const [page, setPage] = React.useState("app");
-    const selectedComponent = page ==="contact"? <Contact />: <App />;
+    const selectedComponent = page ==="contact"? <Contact />: <Home />;
 
     function changePage(newPage) {
         setPage(newPage);
