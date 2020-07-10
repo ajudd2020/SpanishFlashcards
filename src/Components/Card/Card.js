@@ -7,7 +7,7 @@ class Cards extends React.Component {
         super();
         this.state = {
             isFront: true
-        }
+        };
         this.handleClick = this.handleClick.bind(this);
     };
 

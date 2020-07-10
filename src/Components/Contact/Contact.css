@@ -10,6 +10,8 @@
 .ContactForm {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .TextArea {
     display: flex;
@@ -20,21 +22,9 @@
 
 textarea {
     text-align: left;
-    width: 50%
 }
 
 .ContactSubmit {
+    width: 100px;
     margin-top: 10px;
-}
-
-@media screen and (min-width: 500px) {
-    textarea {
-        width: 70%;
-    }
-}
-
-@media screen and (min-width: 1100px) {
-    textarea {
-        width: 50%;
-    }
 }

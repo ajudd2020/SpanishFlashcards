@@ -9,12 +9,12 @@ const CardData = function (props) {
             front.push(props[i])
         } else {
             back.push(props[i])
-        }
-    }
+        };
+    };
 
     return(
        <Cards front={front} back={back} key={front} />
     )
-}
+};
 
 export default CardData

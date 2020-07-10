@@ -29,7 +29,7 @@ class App extends React.Component {
     this.createFrontOnChange = this.createFrontOnChange.bind(this);
     this.createBackOnChange= this.createBackOnChange.bind(this);
     this.handleCreateCard = this.handleCreateCard.bind(this);
-  }
+  };
   
 
   handleOnChange (event){
@@ -52,7 +52,7 @@ class App extends React.Component {
         this.setState({searchValue: ""})
         alert ("Please enter only letters")
       }
-    }
+    };
   };
 
   makeAPICall (searchInput) {
@@ -88,7 +88,7 @@ class App extends React.Component {
         this.setState({errorMessage: errorTest})
         this.setState({searchValue:""})
       });
-  }
+  };
 
   displaySearch (listInfo) {
     var display = listInfo
@@ -103,35 +103,35 @@ class App extends React.Component {
           <div className="POS">Part of Speech: {displayPOS}</div>
           <div className="answer">{displayAnswer}</div>
         </div>)
-    }
-    this.setState({displayInstructions: false})
-    this.setState({searchList:displayArray})
+    };
+    this.setState({displayInstructions: false});
+    this.setState({searchList:displayArray});
   };
 
   handleClick(e, Spanish, English) {
     e.preventDefault();
-    var newCardData = []
-    newCardData.push(English, Spanish)
-    this.setState({cardData:[...this.state.cardData, newCardData]})
-    this.setState({searchList: ""})
-    this.setState({displayClear: true})
+    var newCardData = [];
+    newCardData.push(English, Spanish);
+    this.setState({cardData:[...this.state.cardData, newCardData]});
+    this.setState({searchList: ""});
+    this.setState({displayClear: true});
   };
 
   clearResults (event) {
     event.preventDefault();
-    this.setState({cardData: [] })
-    this.setState({displayClear: false})
-    this.setState({displayInstructions: true})
+    this.setState({cardData: [] });
+    this.setState({displayClear: false});
+    this.setState({displayInstructions: true});
   };
 
   createFrontOnChange (event) {
-    this.setState({frontValue: event.target.value})
-    this.setState({error: false})
+    this.setState({frontValue: event.target.value});
+    this.setState({error: false});
   };
 
   createBackOnChange (event) {
-    this.setState({backValue: event.target.value})
-    this.setState({error: false})
+    this.setState({backValue: event.target.value});
+    this.setState({error: false});
   };
 
   handleCreateCard (event) {
@@ -207,8 +207,8 @@ class App extends React.Component {
           </div>
       </div>
     );
-  }
+  };
   
-}
+};
 
 export default App;
