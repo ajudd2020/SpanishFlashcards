@@ -197,10 +197,14 @@ class App extends React.Component {
                   {this.state.searchList}
               </div>}
           </div>
+          <div>
+              <CardList cardData= {this.state.cardData}/>
+              {this.state.displayClear? <button className="ClearButton" onClick = {event =>this.clearResults(event)}>Clear Cards</button>: ""}
+          </div>
           {this.state.error? <h2 className="error">{this.state.errorMessage}. Please try your search again.</h2>: ""}
-          <CardList cardData= {this.state.cardData}/>
-          {this.state.displayClear? <button onClick = {event =>this.clearResults(event)}>Clear Cards</button>: ""}
-          <Footer/>
+          <div className="Footer">
+              <Footer/>
+          </div>
       </div>
     );
   }
