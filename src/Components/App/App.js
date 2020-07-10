@@ -4,6 +4,8 @@ import CardList from '../CardList/CardList';
 import Footer from '../Footer/Footer';
 import Instructions from '../Instructions/Instructions';
 
+console.log("API KEY", process.env.REACT_APP_API_KEY)
+
 class App extends React.Component {
   constructor (props) {
     super(props);
@@ -56,7 +58,9 @@ class App extends React.Component {
   };
 
   makeAPICall (searchInput) {
-    var url = `https://www.dictionaryapi.com/api/v3/references/spanish/json/${searchInput}?key=fa92e333-2908-43c0-948e-097fbca8468b`
+    const API_KEY = process.env.REACT_APP_API_KEY;
+    console.log("key", API_KEY)
+    var url = `https://www.dictionaryapi.com/api/v3/references/spanish/json/${searchInput}?key=${API_KEY}`
     console.log(url);
     const wordArray = [];
     fetch (url)
