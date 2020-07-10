@@ -4,14 +4,13 @@ import './Card.css'
 const Cards = function (props) {
     const [isFront, changeFace] = React.useState(true);
 
-
-
     function handleClick() {
         changeFace( Value => !Value )
     }
 
     const frontClass = "front " + (isFront? "": "hidden");
     const backClass = "back " + (isFront? "hidden": "");
+
     return(
         <>
             <div className = "flashCard" onClick = {handleClick}>
