@@ -12,7 +12,7 @@ export default function App() {
     }
 
     return(
-        <div className="HomePage">
+        <div className="Menu">
             <Menu changePage = {changePage}/>
             {selectedComponent}
         </div>

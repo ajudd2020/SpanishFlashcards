@@ -6,7 +6,6 @@
     height: 130px;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 30px;
 }
 
 .front, .back {
@@ -31,4 +30,5 @@
     background-color: #25283D;
     font-size: 14px;
     color: white;
+    padding: 4px;
 }

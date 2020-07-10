@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 .MenuButton {
     border: 1px #EDFFEC solid;
 }
