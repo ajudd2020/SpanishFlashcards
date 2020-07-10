@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import CardList from '../CardList/CardList'
-import Footer from '../Footer/Footer'
-import Instructions from '../Instructions/Instructions'
+import CardList from '../CardList/CardList';
+import Footer from '../Footer/Footer';
+import Instructions from '../Instructions/Instructions';
 
 class App extends React.Component {
   constructor (props) {
@@ -42,7 +42,7 @@ class App extends React.Component {
       alert("Please enter a word to search for");
       this.setState({searchValue: ""})
     } else {
-      var letters = /^[A-za-z\s]*$/;
+      var letters = /^[A-Za-zÀ-ÿ\s]*$/;
       event.preventDefault();
       if (this.state.searchValue === ""){
         alert ("Please enter a valid search")
@@ -142,7 +142,7 @@ class App extends React.Component {
       this.setState({frontValue: ""});
       this.setState({backValue: ""});
     } else {
-      var lettersNumbers = /^[A-za-z\s0-9]*$/;
+      var lettersNumbers = /^[A-Za-zÀ-ÿ\s0-9]*$/;
       if (this.state.frontValue.match(lettersNumbers) && this.state.backValue.match(lettersNumbers)) {
         createCardData.push((this.state.frontValue), (this.state.backValue));
         this.setState({cardData:[...this.state.cardData, createCardData]});
@@ -156,7 +156,7 @@ class App extends React.Component {
         this.setState({backValue: ""});
       }
     };
-};
+  };
 
 
   render() {
@@ -192,7 +192,7 @@ class App extends React.Component {
           </div>
           <div className="searchDisplay">
               {this.state.displayInstructions?
-              <Instructions />: 
+              <Instructions />:
               <div className="searchBox">
                   {this.state.searchList}
               </div>}
