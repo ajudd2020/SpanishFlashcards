@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "46ee05b9426017b40a218d13e39e12f1",
+    "revision": "74866011e180b9d8ac97a10c230da328",
     "url": "/SpanishFlashcards/index.html"
   },
   {
-    "revision": "948cb0af2cba72b89b47",
-    "url": "/SpanishFlashcards/static/css/main.dfd4cf06.chunk.css"
+    "revision": "f7742e904f2f26652a50",
+    "url": "/SpanishFlashcards/static/css/main.bf39d661.chunk.css"
   },
   {
     "revision": "43b8b2fce82c6e87d021",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SpanishFlashcards/static/js/2.da22c7dc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "948cb0af2cba72b89b47",
-    "url": "/SpanishFlashcards/static/js/main.b7f59493.chunk.js"
+    "revision": "f7742e904f2f26652a50",
+    "url": "/SpanishFlashcards/static/js/main.385eb925.chunk.js"
   },
   {
     "revision": "4e6f9bca4b7a8d5a0bea",
