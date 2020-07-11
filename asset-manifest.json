@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/SpanishFlashcards/static/css/main.250c829e.chunk.css",
-    "main.js": "/SpanishFlashcards/static/js/main.385eb925.chunk.js",
-    "main.js.map": "/SpanishFlashcards/static/js/main.385eb925.chunk.js.map",
+    "main.css": "/SpanishFlashcards/static/css/main.72e9ed86.chunk.css",
+    "main.js": "/SpanishFlashcards/static/js/main.402afa2a.chunk.js",
+    "main.js.map": "/SpanishFlashcards/static/js/main.402afa2a.chunk.js.map",
     "runtime-main.js": "/SpanishFlashcards/static/js/runtime-main.fe772827.js",
     "runtime-main.js.map": "/SpanishFlashcards/static/js/runtime-main.fe772827.js.map",
     "static/js/2.da22c7dc.chunk.js": "/SpanishFlashcards/static/js/2.da22c7dc.chunk.js",
     "static/js/2.da22c7dc.chunk.js.map": "/SpanishFlashcards/static/js/2.da22c7dc.chunk.js.map",
     "index.html": "/SpanishFlashcards/index.html",
-    "precache-manifest.dbcaaa0478e9ff04adb72af25d26d368.js": "/SpanishFlashcards/precache-manifest.dbcaaa0478e9ff04adb72af25d26d368.js",
+    "precache-manifest.bc73c685009fe8892b865f220206b8ce.js": "/SpanishFlashcards/precache-manifest.bc73c685009fe8892b865f220206b8ce.js",
     "service-worker.js": "/SpanishFlashcards/service-worker.js",
-    "static/css/main.250c829e.chunk.css.map": "/SpanishFlashcards/static/css/main.250c829e.chunk.css.map",
+    "static/css/main.72e9ed86.chunk.css.map": "/SpanishFlashcards/static/css/main.72e9ed86.chunk.css.map",
     "static/js/2.da22c7dc.chunk.js.LICENSE.txt": "/SpanishFlashcards/static/js/2.da22c7dc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fe772827.js",
     "static/js/2.da22c7dc.chunk.js",
-    "static/css/main.250c829e.chunk.css",
-    "static/js/main.385eb925.chunk.js"
+    "static/css/main.72e9ed86.chunk.css",
+    "static/js/main.402afa2a.chunk.js"
   ]
 }
