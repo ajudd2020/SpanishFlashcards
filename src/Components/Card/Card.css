@@ -22,13 +22,13 @@
 }
 
 .front {
-    font-size: 24px;
+    font-size: 30px;
     background-color: white;
 }
 
 .back {
     background-color: #25283D;
-    font-size: 14px;
+    font-size: 20px;
     color: white;
     padding: 4px;
 }
