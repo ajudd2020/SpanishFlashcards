@@ -20,7 +20,7 @@ export default function Instructions () {
                         Click on translation of your choice to add it to your flashcards!
                     </li>
                 </ol>
-                <p>Or, you can create your own!</p>
+                <h3>Or, you can create your own!</h3>
             </div>
         </>
     )
