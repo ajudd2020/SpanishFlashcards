@@ -8,7 +8,6 @@ class Home extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      displayInstructions: true,
       displayClear: false,
       searchValue: '',
       wordList: [],
@@ -101,7 +100,6 @@ class Home extends React.Component {
           <div className="answer">{displayAnswer}</div>
         </div>)
     };
-    this.setState({displayInstructions: false});
     this.setState({searchList:displayArray});
   };
 
@@ -118,7 +116,6 @@ class Home extends React.Component {
     event.preventDefault();
     this.setState({cardData: [] });
     this.setState({displayClear: false});
-    this.setState({displayInstructions: true});
   };
 
   createFrontOnChange (event) {
