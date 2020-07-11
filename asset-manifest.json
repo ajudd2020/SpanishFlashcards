@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/SpanishFlashcards/static/css/main.7cad9f9c.chunk.css",
+    "main.css": "/SpanishFlashcards/static/css/main.9bbb1d85.chunk.css",
     "main.js": "/SpanishFlashcards/static/js/main.4d59f028.chunk.js",
     "main.js.map": "/SpanishFlashcards/static/js/main.4d59f028.chunk.js.map",
     "runtime-main.js": "/SpanishFlashcards/static/js/runtime-main.fe772827.js",
@@ -8,15 +8,15 @@
     "static/js/2.da22c7dc.chunk.js": "/SpanishFlashcards/static/js/2.da22c7dc.chunk.js",
     "static/js/2.da22c7dc.chunk.js.map": "/SpanishFlashcards/static/js/2.da22c7dc.chunk.js.map",
     "index.html": "/SpanishFlashcards/index.html",
-    "precache-manifest.a9fa3a54daa2ef0a65b24d26404a2f80.js": "/SpanishFlashcards/precache-manifest.a9fa3a54daa2ef0a65b24d26404a2f80.js",
+    "precache-manifest.9bd0b05daf86a0d18758522fdaec8fe8.js": "/SpanishFlashcards/precache-manifest.9bd0b05daf86a0d18758522fdaec8fe8.js",
     "service-worker.js": "/SpanishFlashcards/service-worker.js",
-    "static/css/main.7cad9f9c.chunk.css.map": "/SpanishFlashcards/static/css/main.7cad9f9c.chunk.css.map",
+    "static/css/main.9bbb1d85.chunk.css.map": "/SpanishFlashcards/static/css/main.9bbb1d85.chunk.css.map",
     "static/js/2.da22c7dc.chunk.js.LICENSE.txt": "/SpanishFlashcards/static/js/2.da22c7dc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fe772827.js",
     "static/js/2.da22c7dc.chunk.js",
-    "static/css/main.7cad9f9c.chunk.css",
+    "static/css/main.9bbb1d85.chunk.css",
     "static/js/main.4d59f028.chunk.js"
   ]
 }
