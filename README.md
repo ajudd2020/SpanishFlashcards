@@ -17,4 +17,4 @@ The card flip functionality in this app was inspired by Zsolt Nagy's React flash
 
 * As a student of Spanish, I want to be able to search a dictionary for all possible translations so that I can pick the best option for what I am trying to learn. 
 
-* As a student of Spanish, I want to be able to generate flashcards to quiz my Spanish to English and English to Spanish knowledge so that I can test my knowledge of vocabulary. 
+* As a student of Spanish, I want to be able to generate flashcards to quiz my Spanish to English and English to Spanish knowledge so that I can test my vocabulary. 
