@@ -111,6 +111,10 @@ button {
   margin-top: 5px;
 }
 
+.SearchForm button {
+  margin: 0px;
+}
+
 .SearchForm {
   display: flex;
 }
