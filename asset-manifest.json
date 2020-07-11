@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/SpanishFlashcards/static/css/main.b11f16a3.chunk.css",
+    "main.js": "/SpanishFlashcards/static/js/main.b16d685b.chunk.js",
+    "main.js.map": "/SpanishFlashcards/static/js/main.b16d685b.chunk.js.map",
+    "runtime-main.js": "/SpanishFlashcards/static/js/runtime-main.fe772827.js",
+    "runtime-main.js.map": "/SpanishFlashcards/static/js/runtime-main.fe772827.js.map",
+    "static/js/2.da22c7dc.chunk.js": "/SpanishFlashcards/static/js/2.da22c7dc.chunk.js",
+    "static/js/2.da22c7dc.chunk.js.map": "/SpanishFlashcards/static/js/2.da22c7dc.chunk.js.map",
+    "index.html": "/SpanishFlashcards/index.html",
+    "precache-manifest.8016856b457ba7f5ce01b7d723818d1e.js": "/SpanishFlashcards/precache-manifest.8016856b457ba7f5ce01b7d723818d1e.js",
+    "service-worker.js": "/SpanishFlashcards/service-worker.js",
+    "static/css/main.b11f16a3.chunk.css.map": "/SpanishFlashcards/static/css/main.b11f16a3.chunk.css.map",
+    "static/js/2.da22c7dc.chunk.js.LICENSE.txt": "/SpanishFlashcards/static/js/2.da22c7dc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fe772827.js",
+    "static/js/2.da22c7dc.chunk.js",
+    "static/css/main.b11f16a3.chunk.css",
+    "static/js/main.b16d685b.chunk.js"
+  ]
+}
