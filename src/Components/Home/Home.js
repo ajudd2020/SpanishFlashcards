@@ -162,7 +162,7 @@ class Home extends React.Component {
           <h1>Spanish Flashcard Generator</h1>
           <Instructions/>
           <div className="forms">
-              <div>
+              <div className="formContainer">
                 <div className="FormHeading">Generate a Card</div>
                 <form className="SearchForm">
                     <input name="APISearch" type="text" placeholder="Search the dictionary"
@@ -171,7 +171,7 @@ class Home extends React.Component {
                     <button onClick= {this.handleSearch}>Search</button>
                 </form>
               </div>
-              <div>
+              <div className="formContainer">
                 <div className ="FormHeading">Create a Card</div>
                 <form className="CreateForm">
                     <label htmlFor="CreateCardFront">Word for front of card:</label>

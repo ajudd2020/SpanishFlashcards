@@ -88,7 +88,7 @@ button {
   flex-direction: column;
 }
 
-.forms > div {
+.formContainer {
   border: 2px black solid;
   width: 80%;
   height: 220px;
@@ -115,9 +115,6 @@ button {
   margin: 0px;
 }
 
-.SearchForm {
-  display: flex;
-}
 
 .CreateForm, .SearchForm {
   margin: 10px;
@@ -142,13 +139,15 @@ label {
     width: 200px;
   }
   
-  .forms > div {
+  .formContainer {
     font-size: 14px;
   }
 
   .SearchForm {
-    display: inline-block;
+    display: flex;
+    align-items: stretch;
   }
+
 }
 
 @media screen and (min-width: 560px) {
@@ -157,11 +156,12 @@ label {
     flex-direction: row;
     font-size: 18px;
   }
+
   form input {
     width: 200px;
   }
   
-  .forms > div {
+  .formContainer {
     height: 250px;
   }
 }

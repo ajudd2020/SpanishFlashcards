@@ -25,7 +25,7 @@ export default function Contact () {
                     </label>
                     <div className="TextArea">
                         <label htmlFor="comments">Comments:</label>
-                        <textarea id="comments" rows="20" cols="40" placeholder="Enter Your Comments Here">
+                        <textarea name="comments" id="comments" rows="20" cols="40" placeholder="Enter Your Comments Here">
                         </textarea>
                     </div>
                     <button className="ContactSubmit" value="submit">Submit</button>
