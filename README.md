@@ -1,8 +1,12 @@
 # Spanish English/ English Spanish Flashcard Generator
 
-This app was created using React.js, create-react-app, as well as the Webster Dictionary Spanish-English API. With this app, the user can create flashcards to use when studying Spanish/English vocabulary. 
+This app was created using React.js, create-react-app, as well as the Webster Dictionary Spanish-English API. With this app, the user can create flashcards to use when studying Spanish/English vocabulary.
 
-### Future Functionality to Implement: 
+## Attribution
+
+The card flip functionality in this app was inspired by Zsolt Nagy's React flashcard tutorial.
+
+### Future Functionality to Implement:
 * Edit cards after creation
 * Delete individual cards
 * Add page with verb conjugations
