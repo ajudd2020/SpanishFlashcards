@@ -9,7 +9,7 @@ export default function Instructions () {
             <div>
                 <p>Use this app to create flashcards to study Spanish/ English English/Spanish vocaulary.</p>
                 <h2>To generate your cards:</h2>
-                <ol>
+                <ul>
                     <li>
                         Enter a word into the search field.
                     </li>
@@ -19,7 +19,7 @@ export default function Instructions () {
                     <li>
                         Click on translation of your choice to add it to your flashcards!
                     </li>
-                </ol>
+                </ul>
                 <h3>Or, you can create your own!</h3>
             </div>
         </>
