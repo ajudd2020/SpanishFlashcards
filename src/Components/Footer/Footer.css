@@ -7,10 +7,11 @@
     height: 50px;
     width: 100%;
     font-weight: bolder;
-    text-shadow: 1px 1px #61E786;
+    color: #61E786;
+    background-color: #25283D;
 }
 
 a {
-    color: black;
+    color: #61E786;
     text-decoration: none;
 }
