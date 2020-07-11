@@ -94,10 +94,10 @@ class Home extends React.Component {
       let displayAnswer = display[i].answer;
       let displayPOS = display[i].POS
       let displayEnglish = display[i].english
-      displayArray.push(<div className="searchItems" key={key} onClick = {(e) => this.handleClick(e, displayAnswer.split(":").pop(), displayEnglish)}>
+      displayArray.push(<div className="SearchItems" key={key} onClick = {(e) => this.handleClick(e, displayAnswer.split(":").pop(), displayEnglish)}>
           <div className = "English">{displayEnglish}</div>
           <div className="POS">Part of Speech: {displayPOS}</div>
-          <div className="answer">{displayAnswer}</div>
+          <div className="Answer">{displayAnswer}</div>
         </div>)
     };
     this.setState({searchList:displayArray});
@@ -141,7 +141,6 @@ class Home extends React.Component {
         createCardData.push((this.state.frontValue), (this.state.backValue));
         this.setState({cardData:[...this.state.cardData, createCardData]});
         this.setState({displayClear: true});
-        this.setState({displayInstructions: false});
         this.setState({frontValue: ""});
         this.setState({backValue: ""});
       } else {
@@ -158,8 +157,8 @@ class Home extends React.Component {
       <div className="App">
           <h1>Spanish Flashcard Generator</h1>
           <Instructions/>
-          <div className="forms">
-              <div className="formContainer">
+          <div className="Forms">
+              <div className="FormContainer">
                 <div className="FormHeading">Generate a Card</div>
                 <form className="SearchForm">
                     <input name="APISearch" type="text" placeholder="Search the dictionary"
@@ -168,7 +167,7 @@ class Home extends React.Component {
                     <button onClick= {this.handleSearch}>Search</button>
                 </form>
               </div>
-              <div className="formContainer">
+              <div className="FormContainer">
                 <div className ="FormHeading">Create a Card</div>
                 <form className="CreateForm">
                     <label htmlFor="CreateCardFront">Word for front of card:</label>
@@ -185,8 +184,8 @@ class Home extends React.Component {
                 </form>
               </div>
           </div>
-          <div className="searchDisplay">
-              <div className="searchBox">
+          <div className="SearchDisplay">
+              <div className="SearchBox">
                   {this.state.searchList}
               </div>
           </div>
@@ -194,7 +193,7 @@ class Home extends React.Component {
               <CardList cardData= {this.state.cardData}/>
               {this.state.displayClear? <button className="ClearButton" onClick = {event =>this.clearResults(event)}>Clear Cards</button>: ""}
           </div>
-          {this.state.error? <h2 className="error">{this.state.errorMessage}. Please try your search again.</h2>: ""}
+          {this.state.error? <h2 className="Error">{this.state.errorMessage}. Please try your search again.</h2>: ""}
           <div className="Footer">
               <Footer/>
           </div>

@@ -17,12 +17,12 @@ class Cards extends React.Component {
     };
 
     render(){
-    const frontClass = "front " + (this.state.isFront? "": "hidden");
-    const backClass = "back " + (this.state.isFront? "hidden": "");
+    const frontClass = "Front " + (this.state.isFront? "": "Hidden");
+    const backClass = "Back " + (this.state.isFront? "Hidden": "");
     
         return(
             <>
-                <div className = "flashCard" onClick = {event => this.handleClick(event)}>
+                <div className = "FlashCard" onClick = {event => this.handleClick(event)}>
                     <div className = {frontClass}>
                         <div>{this.props.front}</div>
                     </div>

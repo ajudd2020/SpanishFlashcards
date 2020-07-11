@@ -5,7 +5,7 @@ import CardData from '../CardData/CardData'
 export default function CardList (props) {
     return (
         <>
-            <div className="cardContainer">
+            <div className="CardContainer">
                 {props.cardData.map( CardData )}
             </div>
         </>
