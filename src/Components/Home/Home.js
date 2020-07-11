@@ -160,6 +160,7 @@ class Home extends React.Component {
     return (
       <div className="App">
           <h1>Spanish Flashcard Generator</h1>
+          <Instructions/>
           <div className="forms">
               <div>
                 <div className="FormHeading">Generate a Card</div>
@@ -188,11 +189,9 @@ class Home extends React.Component {
               </div>
           </div>
           <div className="searchDisplay">
-              {this.state.displayInstructions?
-              <Instructions />:
               <div className="searchBox">
                   {this.state.searchList}
-              </div>}
+              </div>
           </div>
           <div>
               <CardList cardData= {this.state.cardData}/>

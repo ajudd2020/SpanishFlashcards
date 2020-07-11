@@ -1,4 +1,5 @@
 import React from 'react';
+import './Instructions.css'
 
 export default function Instructions () {
 
@@ -7,8 +8,18 @@ export default function Instructions () {
             <h2>Welcome to the Spanish/ English Flashcard Generator</h2>
             <div>
                 <p>Use this app to create flashcards to study Spanish/ English English/Spanish vocaulary.</p>
-                <p>You can generate your flashcards by searching the Webster's Dictionary Spanish/English API.</p>
-                <p>After you search the dictionary, you will be given a list of possible definitions. Click on the one that you would like added to your flashcards.</p>
+                <h2>To generate your cards:</h2>
+                <ol>
+                    <li>
+                        Enter a word into the search field.
+                    </li>
+                    <li>
+                        Choose the translation/ definition that best fits your needs
+                    </li>
+                    <li>
+                        Click on translation of your choice to add it to your flashcards!
+                    </li>
+                </ol>
                 <p>Or, you can create your own!</p>
             </div>
         </>
